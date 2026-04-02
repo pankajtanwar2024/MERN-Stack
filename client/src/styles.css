@@ -1,0 +1,471 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+:root {
+  font-family: "Manrope", sans-serif;
+  color: #3d2430;
+  background:
+    radial-gradient(circle at top left, rgba(255, 223, 233, 0.9), transparent 30%),
+    linear-gradient(180deg, #fff7f6 0%, #fff0f4 45%, #fffaf7 100%);
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --rose: #d76d93;
+  --deep-rose: #a24668;
+  --cream: #fff8f4;
+  --wine: #4f2433;
+  --gold: #d9ae77;
+  --border: rgba(125, 74, 92, 0.14);
+  --shadow: 0 24px 80px rgba(139, 84, 105, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.page-shell {
+  position: relative;
+  overflow: hidden;
+}
+
+.ambient {
+  position: absolute;
+  z-index: 0;
+  width: 34rem;
+  height: 34rem;
+  border-radius: 999px;
+  filter: blur(24px);
+  opacity: 0.45;
+}
+
+.ambient-left {
+  top: -8rem;
+  left: -8rem;
+  background: rgba(248, 170, 198, 0.8);
+}
+
+.ambient-right {
+  top: 12rem;
+  right: -10rem;
+  background: rgba(255, 223, 176, 0.75);
+}
+
+.hero,
+.section {
+  position: relative;
+  z-index: 1;
+  width: min(1180px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.hero {
+  padding: 0.35rem 0 1.5rem;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.15rem 0 0.2rem;
+}
+
+.brand-mark,
+.eyebrow,
+.portfolio-card span,
+.mini-label {
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.brand-mark,
+.nav-links a,
+.eyebrow,
+.portfolio-card span,
+.mini-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.2rem;
+  color: rgba(79, 36, 51, 0.75);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 1rem;
+  align-items: start;
+  min-height: calc(100vh - 15rem);
+}
+
+.hero-copy h1,
+.section-heading h2,
+.highlight-card h3,
+.portfolio-card h3,
+.contact-card h2,
+.hero-card h2 {
+  font-family: "Cormorant Garamond", serif;
+}
+
+.hero-copy h1 {
+  margin: 0;
+  font-size: clamp(3.6rem, 7vw, 6.2rem);
+  line-height: 0.82;
+  letter-spacing: -0.04em;
+}
+
+.hero-title {
+  margin: 1rem 0 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--deep-rose);
+}
+
+.hero-intro {
+  max-width: 36rem;
+  margin: 1.1rem 0 0;
+  font-size: 1.05rem;
+  color: rgba(79, 36, 51, 0.78);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.primary-btn,
+.secondary-btn {
+  border-radius: 999px;
+  padding: 0.95rem 1.4rem;
+  font-weight: 800;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.primary-btn {
+  color: white;
+  background: linear-gradient(135deg, var(--rose), var(--deep-rose));
+  box-shadow: 0 18px 36px rgba(167, 70, 104, 0.25);
+}
+
+.secondary-btn {
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px);
+}
+
+.primary-btn:hover,
+.secondary-btn:hover {
+  transform: translateY(-2px);
+}
+
+.strength-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+  padding: 0;
+  margin: 2rem 0 0;
+  list-style: none;
+}
+
+.strength-list li,
+.highlight-card,
+.portfolio-card,
+.hero-card,
+.contact-card {
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.strength-list li {
+  padding: 1rem;
+  border-radius: 1.2rem;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  font-weight: 700;
+}
+
+.hero-card {
+  padding: 0.95rem;
+  border-radius: 2rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 244, 245, 0.8)),
+    linear-gradient(135deg, rgba(255, 212, 224, 0.65), rgba(255, 232, 201, 0.4));
+}
+
+.portrait-panel {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.portrait-frame {
+  display: grid;
+  place-items: center;
+  padding: 0.5rem;
+  border-radius: 1.1rem;
+  background: linear-gradient(135deg, rgba(255, 236, 243, 0.95), rgba(255, 248, 241, 0.85));
+}
+
+.portrait-placeholder {
+  display: grid;
+  place-items: center;
+  width: min(100%, 10rem);
+  aspect-ratio: 1 / 1.15;
+  border-radius: 999px 999px 1rem 1rem;
+  border: 1px solid rgba(162, 70, 104, 0.18);
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.95), rgba(252, 220, 229, 0.9)),
+    linear-gradient(180deg, rgba(255, 238, 244, 0.95), rgba(255, 247, 240, 0.95));
+  text-align: center;
+}
+
+.portrait-placeholder span {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.9rem;
+  line-height: 1;
+  color: var(--deep-rose);
+}
+
+.portrait-placeholder p {
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-card-inner {
+  padding: 1rem;
+  border-radius: 1.5rem;
+  background: linear-gradient(135deg, rgba(255, 223, 236, 0.9), rgba(255, 248, 241, 0.75));
+}
+
+.hero-card h2 {
+  margin: 0.4rem 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.stat-row div {
+  padding: 1rem;
+  border-radius: 1.3rem;
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.stat-row span {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.8rem;
+  color: var(--deep-rose);
+}
+
+.section {
+  padding: 2rem 0 4rem;
+}
+
+.section-heading {
+  max-width: 40rem;
+  margin-bottom: 1.8rem;
+}
+
+.section-heading h2 {
+  margin: 0.4rem 0 0;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 0.98;
+}
+
+.highlight-grid,
+.portfolio-grid {
+  display: grid;
+  gap: 1.4rem;
+}
+
+.highlight-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.highlight-card,
+.portfolio-card,
+.contact-card {
+  border-radius: 1.7rem;
+  background: rgba(255, 255, 255, 0.68);
+  backdrop-filter: blur(16px);
+}
+
+.highlight-card,
+.portfolio-card {
+  padding: 1.5rem;
+}
+
+.highlight-card h3,
+.portfolio-card h3 {
+  margin: 0 0 0.8rem;
+  font-size: 2rem;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.4rem;
+}
+
+.info-card {
+  padding: 1.6rem;
+  border-radius: 1.7rem;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.68);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+}
+
+.info-card h3 {
+  margin: 0.4rem 0 1rem;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2rem;
+}
+
+.info-card a {
+  display: block;
+  margin-top: 0.75rem;
+  color: var(--deep-rose);
+  font-weight: 700;
+  word-break: break-word;
+}
+
+.social-list {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.social-list a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.1rem;
+  border-radius: 1rem;
+  background: rgba(255, 244, 246, 0.85);
+}
+
+.social-list span {
+  color: rgba(79, 36, 51, 0.7);
+}
+
+.highlight-card p,
+.portfolio-card p,
+.contact-card p,
+.info-card p,
+.hero-card p {
+  color: rgba(79, 36, 51, 0.78);
+}
+
+.portfolio-section {
+  padding-top: 1rem;
+}
+
+.portfolio-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.portfolio-card:nth-child(1) {
+  background: linear-gradient(180deg, rgba(255, 236, 243, 0.95), rgba(255, 248, 248, 0.8));
+}
+
+.portfolio-card:nth-child(2) {
+  background: linear-gradient(180deg, rgba(255, 236, 224, 0.95), rgba(255, 248, 240, 0.8));
+}
+
+.portfolio-card:nth-child(3) {
+  background: linear-gradient(180deg, rgba(255, 245, 230, 0.95), rgba(255, 250, 242, 0.8));
+}
+
+.portfolio-card:nth-child(4) {
+  background: linear-gradient(180deg, rgba(255, 234, 239, 0.95), rgba(255, 250, 247, 0.8));
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+@media (max-width: 900px) {
+  .hero-grid,
+  .highlight-grid,
+  .portfolio-grid,
+  .info-grid,
+  .contact-card,
+  .strength-list {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-grid,
+  .contact-card {
+    display: grid;
+  }
+
+  .hero-grid {
+    min-height: auto;
+  }
+
+  .topbar {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(3rem, 16vw, 4.6rem);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding-top: 0.75rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+  }
+
+  .hero-card,
+  .hero-card-inner,
+  .contact-card,
+  .highlight-card,
+  .portfolio-card,
+  .strength-list li {
+    border-radius: 1.3rem;
+  }
+
+  .stat-row {
+    grid-template-columns: 1fr;
+  }
+}
