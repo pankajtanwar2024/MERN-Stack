@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import qiyaPhoto from "./assets/qiya.pic.png";
 
 const strengths = [
   "Story-led content writing",
@@ -136,10 +137,7 @@ export default function App() {
           <div className="hero-card">
             <div className="portrait-panel">
               <div className="portrait-frame">
-                <div className="portrait-placeholder">
-                  <span>Q</span>
-                  <p>Photo Space</p>
-                </div>
+                <img className="portrait-image" src={qiyaPhoto} alt="Qiyaa portrait" />
               </div>
               <div className="hero-card-inner">
                 <p className="mini-label">Brand Mood</p>

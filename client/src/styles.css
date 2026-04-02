@@ -228,31 +228,15 @@ a {
   background: linear-gradient(135deg, rgba(255, 236, 243, 0.95), rgba(255, 248, 241, 0.85));
 }
 
-.portrait-placeholder {
-  display: grid;
-  place-items: center;
+.portrait-image {
+  display: block;
   width: min(100%, 10rem);
   aspect-ratio: 1 / 1.15;
   border-radius: 999px 999px 1rem 1rem;
   border: 1px solid rgba(162, 70, 104, 0.18);
-  background:
-    radial-gradient(circle at top, rgba(255, 255, 255, 0.95), rgba(252, 220, 229, 0.9)),
-    linear-gradient(180deg, rgba(255, 238, 244, 0.95), rgba(255, 247, 240, 0.95));
-  text-align: center;
-}
-
-.portrait-placeholder span {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 2.9rem;
-  line-height: 1;
-  color: var(--deep-rose);
-}
-
-.portrait-placeholder p {
-  margin: 0;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  object-fit: cover;
+  object-position: center top;
+  box-shadow: 0 18px 36px rgba(139, 84, 105, 0.16);
 }
 
 .hero-card-inner {

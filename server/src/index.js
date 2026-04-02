@@ -1,6 +1,7 @@
 import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
+import fs from "fs";
 import mongoose from "mongoose";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -12,6 +13,7 @@ const port = process.env.PORT || 5000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const clientDistPath = path.resolve(__dirname, "../../client/dist");
+const hasClientBuild = fs.existsSync(path.join(clientDistPath, "index.html"));
 
 app.use(cors());
 app.use(express.json());
@@ -40,7 +42,7 @@ app.get("/api/profile", (_req, res) => {
   });
 });
 
-if (process.env.NODE_ENV === "production") {
+if (hasClientBuild) {
   app.use(express.static(clientDistPath));
 
   app.get("/{*splat}", (_req, res) => {
